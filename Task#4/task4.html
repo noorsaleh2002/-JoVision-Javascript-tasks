@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>
+HTML/JS tasks
+
+</title>
+
+
+<style>
+body{
+display:flex;
+	height: 100vh;
+align-items:center;
+justify-content:center;
+
+}
+button{
+padding:20px;
+border:none;
+background-color:orange;
+color:white;
+
+ border-radius: 4px;
+ cursor: pointer;
+
+
+}
+p{
+
+font-size:2rem;
+
+}
+</style>
+</head>
+<body>
+
+<div>
+<button onclick="sumArr()">Click me </button>
+<p id="demo"></p>
+
+</div>
+
+<br/>
+
+<script>
+
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+
+
+function sumArr(){
+let sum=0;
+for(let i=0 ; i<arr.length;i++)
+sum+=arr[i];
+
+document.getElementById("demo").innerHTML ="SUM= "+sum;
+
+}
+
+</script>
+
+
+</body>
+
+
+
+
+</html>
+
