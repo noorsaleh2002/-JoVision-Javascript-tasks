@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Time</title>
+   
+    <title>HTML/JS tasks</title>
     <style>
         body {
             display: flex;
@@ -26,7 +25,8 @@
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-           let time=hours+":"+minutes+":"+seconds;
+			const ampm = hours >= 12 ? 'PM' : 'AM';
+           let time=hours+":"+minutes+":"+seconds+"  "+ampm;
             document.getElementById('timeDisplay').textContent = time;
         }
 
