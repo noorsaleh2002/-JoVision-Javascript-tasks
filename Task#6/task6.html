@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<title>
+HTML/JS tasks
+
+</title>
+
+
+<style>
+body{
+display:flex;
+	height: 100vh;
+align-items:center;
+justify-content:center;
+
+}
+button{
+padding:20px;
+border:none;
+color:white;
+
+ border-radius: 4px;
+ cursor: pointer;
+
+
+}
+button.red
+{
+background-color:red;
+}
+button.orange
+{
+background-color:orange;
+}
+button.green
+{
+background-color:green;
+}
+button.blue
+{
+background-color:blue;
+}
+button.pink
+{
+background-color:pink;
+}
+p{
+
+font-size:2rem;
+
+}
+</style>
+</head>
+<body>
+
+<div>
+<button onclick="remove3s()"class="red">A</button>
+<button onclick="addnumber()" class="orange">B </button>
+<button onclick="add3()" class="green">C </button>
+<button onclick="print()" class="blue">D</button>
+<button onclick="shuffel()" class="pink">E </button>
+
+</div>
+
+<br/>
+
+<script>
+function shuffel()
+{
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+function shuffleArray(array) {
+for (let i = array.length - 1; i > 0; i--) {
+let j = Math.floor(Math.random() * (i + 1));
+[array[i], array[j]] = [array[j], array[i]];
+}
+}
+shuffleArray(arr);
+ console.log('Shuffled:', arr);
+arr.sort((a, b) => a - b);
+arr.reverse();
+ console.log('Sorted in descending order:', arr);
+
+}
+function print(){
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+const x=[];
+for(let i=20 ; i<=40 ; i++)
+x.push(arr[i]);
+console.log(x);
+}
+function remove3s()
+{
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+for(let i =0 ; i<arr.length;i++)
+{
+   if(arr[i]%3==0) {
+   arr.splice(i,1);
+   i--;
+   }
+   
+
+}
+
+console.log(arr);
+}
+function addnumber()
+{
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+for(let i=100;i<=150;i++)
+{
+arr.push(i);
+}
+console.log(arr);
+
+}
+function add3(){
+const arr=[];
+for(let i=0;i<=100;i++){
+
+arr.push(i);
+}
+for(let i =0 ; i<arr.length;i++){
+
+arr[i]+=3;
+
+}
+console.log(arr);
+
+}
+
+
+
+</script>
+
+
+</body>
+
+
+
+
+</html>
+
