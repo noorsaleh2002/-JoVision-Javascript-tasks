@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            HTML/JS tasks
+        </title>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+    }
+    button{
+        background-color: blueviolet;
+        color: white;
+        padding: 20px;
+        border: none;
+        border-radius: 4px;
+    }
+</style>
+    </head>
+    <body>
+        <button onclick="getip()">Get ip</button>
+        <script>
+            function getip()
+            {
+                fetch("https://api.ipify.org/?format=json")
+                .then(res=>res.json())
+                .then(ip=>console.log("Your ip: ",ip))
+            }
+        </script>
+    </body>
+</html>
