@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML/JS tasks</title>
+    </head>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            align-items: center;
+            justify-content: center;
+           height: 40vh;
+
+        }
+        button{
+          
+            border-radius: 4px;
+            padding: 10px;
+            
+
+        }
+       h1{
+            margin-top: 40vh;
+        }
+    </style>
+    <body>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br/><br/>
+        <button onclick="submit()">Submit </button>
+
+        <script>
+            async function submit(){
+                let myname=document.getElementById("name").value;
+                if(!myname) {
+                    alert("Enter your name");
+                    return;
+                }
+                try{
+                    const responce=await fetch("https://api.agify.io?name=myname");
+                    if(!responce.ok) {
+                        throw "Failed to fetch";
+                    }
+                    
+                    const age=(await responce.json()).age;
+                    alert("Your name is : "+myname+"\n Your age is : "+age);
+
+                }catch(error){
+                    alert('Error fetching age. Please try again.');
+                }
+
+            }
+        </script>
+    </body>
+</html>
